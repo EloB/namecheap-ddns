@@ -1,0 +1,17 @@
+# .release.toml
+
+# Don't publish to crates.io at all
+disable-publish = true
+
+# Still create tags and push
+disable-push = false
+disable-tag = false
+
+# Tag format: v1.0.0
+tag-prefix = "v"
+
+# Commit message for the release commit
+pre-release-commit-message = "chore: Release {{crate_name}} version {{version}}"
+
+# Don't bump to a -dev version afterwards, keep repo exactly at the released version
+no-dev-version = true

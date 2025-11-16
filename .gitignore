@@ -1,0 +1,33 @@
+# Rust build output
+/target/
+
+# Rust toolchain junk
+**/*.rs.bk
+
+# Logs
+*.log
+logs/
+debug.log
+
+# Environment variables (never commit secrets)
+.env
+.env.*
+
+# Docker artifacts
+*.tar
+*.img
+docker-build/
+
+# IDE junk
+.vscode/
+.idea/
+*.iml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*.swo

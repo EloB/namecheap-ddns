@@ -1,0 +1,25 @@
+[package]
+name = "namecheap-ddns"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+description = "Tiny multi-arch Namecheap DDNS updater for Namecheap Dynamic DNS."
+license = "MIT"
+repository = "https://github.com/EloB/namecheap-ddns"
+homepage = "https://github.com/EloB/namecheap-ddns"
+documentation = "https://github.com/EloB/namecheap-ddns"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+panic = "abort"
+codegen-units = 1
+
+[dependencies]
+log = "0.4"
+env_logger = "0.11"
+quick-xml = "0.36"
+reqwest = { version = "0.12", features = ["rustls-tls", "json"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time"] }
