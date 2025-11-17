@@ -42,10 +42,14 @@ A tiny, fast, multi-platform Namecheap Dynamic DNS updater written in Rust.
 # Docker Example
 
 ```bash
-docker run --rm \
+docker run \
+  --name namecheap-ddns \
+  --restart=always \
   -e NC_DOMAIN="example.com" \
   -e NC_PASSWORD="your-ddns-password" \
-  -e NC_HOSTS="@,www" \
+  -e NC_HOSTS="@,*" \
+  -e LOG_STYLE="compact" \
+  -v ddns-data:/data \
   elob/namecheap-ddns:latest
 ```
 
